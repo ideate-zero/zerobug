@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <link rel="stylesheet" type="text/css" href="style2.css">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- favico -->
+  
+    <!-- importing font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link rel="stylesheet" href="https://daneden.github.io/animate.css/animate.min.css">
+
+
+    <title>टीम</title>
+    <!-- Jquery links -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#accordion").accordion({
+                collapsible: true
+            });
+        });
+    </script>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Our Team Page</title>
+
+      <!-- custom stylesheet -->
+      <link rel="stylesheet" href="css/team.css">
+
+      <!-- font-awesome icons -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+      <!-- Jquery CDN -->
+      <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+      <!-- Plugin  -->
+      <script src="js/jquery.reflection.js"></script>
+      <script src="js/jquery.cloud9carousel.js"></script>
+</head>
+<body>
+<header id="header" class="header-inner-pages">
+
+
+    <div class="container">
+
+      <div class="logo float-left">
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <h1 class="text-light"><a href="index.html" class="scrollto"><span>टीम</span></a></h1>
+        <!-- <a href="index.html" class="scrollto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
+      </div>
+
+
+
+ <nav class="main-nav float-right d-none d-lg-block">
+        <ul>
+          <li><a href="index.html">विकास सेतु</a></li>
+          <li><a href="study.html">शिक्षा केंद्र</a></li>
+          <li><a href="places.html">सुविधा</a></li>
+          <li><a href="gov.html">ज्ञानकोष</a>
+           <li><a href="covid.html">कोविड</a></li>
+		   <li><a href="team.html">टीम</a></li>
+        </ul>
+      </nav>
+
+
+    </div>
+  </header>
+
+      <div id="wrap">
+            <div id="showcase">
+                  <img src="images/Diksha.png" alt="Diksha" class="cloud9-item">
+                  <img src="images/Soman.png" alt="Soman" class="cloud9-item">
+                  <img src="images/shailesh.png" alt="shailesh" class="cloud9-item">
+                  <img src="images/Prabsaran.png" alt="Prabsaran" class="cloud9-item">
+                  <img src="images/Kushagra.png" alt="Kushagra" class="cloud9-item">
+            </div>
+
+            <p id="item-title">&nbsp;</p>
+
+            <div class="nav noselect">
+                  <button class="left"><i class="fa fa-arrow-left"></i></button>
+                  <button class="right"><i class="fa fa-arrow-right"></i></button>
+            </div>
+
+      </div>
+
+      <script type="text/javascript">
+
+      $(function() {
+            var showcase = $("#showcase")
+
+            showcase.Cloud9Carousel( {
+                  yPos: 42,
+                  yRadius: 48,
+                  mirrorOptions: {
+                        gap: 12,
+                        height: 0.2
+                  },
+                  buttonLeft: $(".nav > .left"),
+                  buttonRight: $(".nav > .right"),
+                  autoPlay: true,
+                  bringToFront: true,
+
+                  onRendered: showcaseUpdated,
+                  onLoaded: function() {
+                        showcase.css( 'visibility', 'visible' )
+                        showcase.css( 'display', 'none')
+                        showcase.fadeIn( 1500 )
+                  }
+            })
+
+            function showcaseUpdated( showcase ) {
+                  var title = $("#item-title").html(
+                        $(showcase.nearestItem()).attr( 'alt' )
+                  )
+
+                  var c = Math.cos((showcase.floatIndex() % 1) * 2 * Math.PI)
+                  title.css('opacity', 0.5 + (0.5 * c))
+            }
+
+            $('.nav > button').click( function( e ) {
+                  var b = $(e.target).addClass( 'down' )
+                  setTimeout( function() { b.removeClass( 'down' ) }, 80)
+            } )
+
+            $(document).keydown( function( e ) {
+                  switch( e.keyCode ) {
+                        case 37:
+                        $('.nav > .left').click()
+                        break
+
+                        case 39:
+                        $('.nav > .right').click()
+                  }
+            })
+      })
+
+      </script>
+</body>
+</html>
